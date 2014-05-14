@@ -3,7 +3,9 @@ services:
 - kelseyhightower/etcd@0.0.1
 build:
     steps:
-        - bundle-install
         - script:
-            name: middleman build
-            code: bundle exec middleman build --verbose --no-clean
+            name: curl check etcd
+            code: |
+                echo $WERCKER_ETCD_ADDR
+                curl -L http://$WERCKER_ETCD_ADDR/v2/keys/mykey -XPUT -d value="this is awesome"
+                curl -L http://$WERCKER_ETCD_ADDR/v2/keys/mykey
