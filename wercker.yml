@@ -1,0 +1,9 @@
+box: wercker/default
+services:
+- kelseyhightower/etcd@0.0.1
+build:
+    steps:
+        - bundle-install
+        - script:
+            name: middleman build
+            code: bundle exec middleman build --verbose --no-clean
