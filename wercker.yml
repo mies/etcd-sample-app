@@ -1,6 +1,6 @@
 box: wercker/default
 services:
-- kelseyhightower/etcd@0.0.1
+- kelseyhightower/etcd
 build:
     steps:
         - script:
