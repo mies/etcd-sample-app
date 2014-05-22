@@ -7,5 +7,5 @@ build:
             name: curl check etcd
             code: |
                 echo $WERCKER_ETCD_ADDR
-                curl -L http://${WERCKER_ETCD_ADDR}/v2/keys/mykey -XPUT -d value="this is awesome"
-                curl -L http://${WERCKER_ETCD_ADDR}/v2/keys/mykey
+                curl -L http://${WERCKER_ETCD_HOST}:${WERCKER_ETCD_PORT}/v2/keys/mykey -XPUT -d value="this is awesome"
+                curl -L http://${WERCKER_ETCD_HOST}:${WERCKER_ETCD_PORT}/v2/keys/mykey
